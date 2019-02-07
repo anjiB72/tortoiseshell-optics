@@ -1,0 +1,54 @@
+/*
+    Tortoiseshell Optics CSS Style sheet
+    Author: Angela Boakes
+    Date: February 2019
+*/
+
+/* Set base font size*/
+html {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+/*set font for document*/
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+/*set background image in header*/
+.header {
+  background-image: url(../images/glasses-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  height: 30rem;
+  padding-top: 1rem;
+}
+
+  .menu-bar{
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    height: auto;
+    align-items: center;
+      }
+
+    .logo{
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+      .logo img{
+        height: 1.5rem;
+        padding-right: 1rem;
+      }
+
+      .logo span{
+        color: white;
+        font-size: 1rem;
+      }
