@@ -15,40 +15,69 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
-/*set background image in header*/
-.header {
-  background-image: url(../images/glasses-bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  margin: 0;
-  height: 30rem;
-  padding-top: 1rem;
-}
+/*where display screen is greater than 960px wide*/
+@media only screen and (min-width: 960px) {
 
-  .menu-bar{
-    background-color: cadetblue;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    height: auto;
-    align-items: center;
-      }
+  /*set background image in header*/
+  .header {
+    background-image: url(../images/glasses-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding-top: 1rem;
+    height: 30rem;
+  }
 
-    .logo{
+  /*sets flex container holding menu bar and byline*/
+    .container {
+      width: 960px;
+      margin: 0 auto;
       display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
+      flex-direction: column;
     }
-
-      .logo img{
-        height: 1.5rem;
-        padding-right: 1rem;
+      .menu-bar{
+        background-color: cadetblue;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        margin: 0;
+        align-items: center;
       }
+        .logo{
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+        }
+          .logo img{
+            height: 1.5rem;
+            padding-right: 1rem;
+          }
+          .logo span{
+            color: white;
+            font-size: 1rem;
+          }
+          .full-menu{
+            padding-right: 2rem;
+          }
+          span>a{
+            color: white;
+            text-decoration: none;
+            }
+          #short-menu{
+            display: none;
+          }
 
-      .logo span{
-        color: white;
-        font-size: 1rem;
-      }
+        .byline{
+          align-self: flex-end;
+          background-color: white;
+          padding: 1.5rem 5rem;
+          font-weight: bold;
+          font-size: 2rem;
+          line-height: 1.2;
+          margin-top: 10rem;
+          margin-right: -2rem;
+        }
+}
