@@ -299,7 +299,7 @@ header {
       max-width: 960px;
       margin: 0 auto;
     }
-          #short-menu{
+          .short-menu{
             display: none;
             padding: 0;
           }
