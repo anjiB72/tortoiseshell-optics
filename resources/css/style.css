@@ -15,51 +15,74 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
+/*TO BE DELETED*/
+body,
+header,
+.container {
+  border: 1px solid black;
+}
+/*ABOVE TO BE DELETED*/
+
+/*set flex containers*/
+.flex-row{
+  display: flex;
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/*header background image*/
 header {
   background-image: url(../images/glasses-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   margin: 0;
+  padding: 0;
 }
 
+
 /*set menu bar style*/
-  #header {
-    display: flex;
-    flex-direction: column;
-  }
   .menu-bar{
     background-color: cadetblue;
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding: 1rem 0 1rem 2rem;
-    margin: 0;
+    padding: 1rem 0;
+    margin: 0 auto;
     align-items: center;
-  }
+    }
     .logo{
-      display: flex;
-      flex-direction: row;
       justify-content: flex-start;
       align-items: center;
     }
       .logo img{
         height: 1.5rem;
-        padding-right: 1rem;
+        padding: 0 1rem 0 2rem;
       }
       .logo span{
         color: white;
         font-size: 1rem;
       }
-      span>a{
-        color: white;
-        text-decoration: none;
-        }
+      .full-menu,
+      .short-menu {
+        padding-right: 2rem;
+      }
+        span>a{
+          color: white;
+          text-decoration: none;
+          }
+
+/*header container with byline*/
+        #byline{
+          align-self: flex-end;
+          background-color: white;
+          font-weight: bold;
+          line-height: 1.2;
+          }
 
 /*styling for services content*/
   #services {
-    display: flex;
-    flex-direction: row;
     margin: 3rem auto;
     justify-content: center;
     align-content: space-between;
@@ -90,10 +113,9 @@ header {
 
 /*styling for details section*/
   #details{
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-content: space-between;
+    margin-bottom: 5rem;
   }
     .contact{
       width: 35%;
@@ -117,17 +139,16 @@ header {
           line-height: 1.4;
         }
 
+/*Styling for footer section*/
         #footer{
           background-color: azure;
-          display: flex;
-          flex-direction: row;
-          margin: 5rem auto 0 auto;
-          padding: 4rem 0 4rem 4rem;
+          margin: 0 auto;
+          padding: 0;
           align-content: center;
         }
           #black-logo{
             height: 1.5rem;
-            padding-right: 1rem;
+            padding: 4rem 1rem 4rem 4rem;
             margin: 0;
           }
           #copyright{
@@ -135,6 +156,57 @@ header {
             padding: 0;
             align-self: center;
           }
+
+/*display is less than 768px wide*/
+@media only screen and (max-width: 767px){
+
+/*sets header background picture*/
+  header {
+    height: 17rem;
+    background-position: 20%;
+  }
+
+  /*set menu bar style*/
+ .logo span,
+ .full-menu{
+   display:none;
+ }
+
+ }
+
+/*set display where screen width is less than 960 but bigger than 768*/
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  header{
+    max-width: 959px;
+    padding-top: 0;
+    height: 22rem;
+  }
+  .container {
+    max-width: 959px;
+    margin: 0 auto;
+  }
+  .short-menu{
+    display: none;
+    padding: 0;
+  }
+  .menu-bar{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding-right: 2rem;
+    width: 100%;
+  }
+  #byline{
+    align-self: flex-end;
+    background-color: white;
+    padding: 0.75rem 4rem;
+    font-weight: bold;
+    font-size: 1.33rem;
+    line-height: 1.2;
+    margin: 8.6rem 2rem 0 0;
+    }
+}
+
 
 /*display screen is greater than 960px wide*/
 @media only screen and (min-width: 960px) {
@@ -145,13 +217,9 @@ header {
   }
   /*sets container size for content*/
     .container {
-      width: 960px;
+      max-width: 960px;
       margin: 0 auto;
     }
-
-          .full-menu{
-            padding-right: 2rem;
-          }
           #short-menu{
             display: none;
             padding: 0;
@@ -164,6 +232,12 @@ header {
           font-size: 2rem;
           line-height: 1.2;
           margin-top: 10rem;
-          margin-right: -2rem;
-        }
+          }
+}
+
+/*sets byline position when screen is wider than 1032px*/
+@media only screen and (min-width: 1032px) {
+  #byline{
+      margin-right: -2rem;
+  }
 }
