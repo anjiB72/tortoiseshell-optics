@@ -15,14 +15,6 @@ body {
   font-family: Helvetica, sans-serif;
 }
 
-/*TO BE DELETED*/
-body,
-header,
-.container {
-  border: 1px solid black;
-}
-/*ABOVE TO BE DELETED*/
-
 /*set flex containers*/
 .flex-row{
   display: flex;
@@ -94,51 +86,55 @@ header {
       justify-content: space-between;
       align-content: center;
       height: 8rem;
+      width: 5rem;
     }
+    #serv-paper{
+      width: 8rem;
+    }
+    .serv-box{
+      margin-left: 6rem;
+    }
+
       #paper{
         width: 3.5rem;
-        padding: 0 3rem;
+        align-self: center;
       }
       #ruler,
       #truck {
+        align-self:center;
         width: 5rem;
-        padding: 0 3rem;
       }
       .service>p {
         text-align: center;
-      }
-      br{
         line-height: 1.4;
       }
 
 /*styling for details section*/
   #details{
-    justify-content: center;
-    align-content: space-between;
     margin-bottom: 5rem;
+    justify-content: center;
   }
     .contact{
       width: 35%;
-      display: flex;
-      flex-direction: column;
-      margin: 0 2.5%;
+      margin: 0;
+      justify-content: flex-start;
     }
       .contact-headings{
         background-color: cadetblue;
         width: 10rem;
         margin-bottom: 1rem;
         padding: 0.5rem 1.25rem;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
       }
-        .contact-headings p{
-          color: white;
-          font-weight: bold;
-          font-size: 1rem;
-        }
-        .contact-text p{
+        .contact-text{
           font-size: 1rem;
           line-height: 1.4;
         }
-
+        #appt{
+          margin-left: 5%;
+        }
 /*Styling for footer section*/
         #footer{
           background-color: azure;
@@ -146,7 +142,7 @@ header {
           padding: 0;
           align-content: center;
         }
-          #black-logo{
+          #black-logo>img{
             height: 1.5rem;
             padding: 4rem 1rem 4rem 4rem;
             margin: 0;
@@ -156,6 +152,51 @@ header {
             padding: 0;
             align-self: center;
           }
+
+/*MOBILE display is less than 590px*/
+@media only screen and (max-width: 590px){
+
+  #services {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 3.77rem 0;
+  }
+    .service{
+      align-self: center;
+      justify-content: flex-start;
+      width: 5rem;
+      height: auto;
+      margin: 1.54rem 0 0 0;
+      padding: 0;
+    }
+    #serv-paper{
+      margin-top: 0;
+      width:6rem;
+    }
+      .service p{
+        font-size: 0.77rem;
+        line-height: 1.4;
+        }
+      #paper,
+      #ruler,
+      #truck {
+        padding: 0;
+        margin: 0 auto;
+      }
+
+      #footer{
+        justify-content: center;
+      }
+        #black-logo>img{
+          margin: 4rem 0;
+          padding: 0;
+        }
+        #copyright {
+          display:none;
+        }
+}
+
 
 /*display is less than 768px wide*/
 @media only screen and (max-width: 767px){
@@ -167,11 +208,49 @@ header {
   }
 
   /*set menu bar style*/
- .logo span,
- .full-menu{
-   display:none;
- }
+  .menu-bar{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+  }
+   .logo span,
+   .full-menu{
+     display:none;
+   }
 
+  /*set byline*/
+    #byline{
+      width: 100%;
+      margin: 12.6rem 0 0 0;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    #details{
+      display: flex;
+      flex-direction: column;
+    }
+      .contact{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+        .contact-headings {
+          width: 100%;
+          margin: 0 0 1rem 0;
+          padding: 0.5rem 0;
+        }
+        .contact-text {
+          width: 100%;
+          text-align: left;
+          font-size: 0.77rem;
+          padding: 0 0.5rem;
+        }
+        #appt{
+          margin: 4rem 0 0 0;
+        }
  }
 
 /*set display where screen width is less than 960 but bigger than 768*/
