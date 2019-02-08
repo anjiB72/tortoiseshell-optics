@@ -319,4 +319,8 @@ header {
   #byline{
       margin-right: -2rem;
   }
+  .short-menu{
+    display: none;
+    padding: 0;
+  }
 }
